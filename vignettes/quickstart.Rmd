@@ -1,0 +1,57 @@
+---
+title: "Usage"
+output: 
+    html_document:
+        keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Loading package:
+
+```{r}
+library(rgprofiler)
+```
+
+We'll be profiling `fgsea`:
+
+```{r}
+library(fgsea)
+data(exampleRanks)
+data(examplePathways)
+```
+
+Running `fgsea` wrapped in profiler:
+
+
+```{r}
+profOut <- tempfile("prof")
+start_profiler(profOut)
+fr <- fgseaMultilevel(examplePathways, exampleRanks, eps=0)
+stop_profiler()
+```
+
+
+To get the visualization of results we first need path to used `fgsea.so`:
+
+```{r}
+fgseaSoPath <- getLoadedDLLs()[["fgsea"]][["path"]]
+fgseaSoPath
+```
+
+And now we can explore the profiler output with `google-pprof`:
+
+```{r}
+profOutSvg <- paste0(profOut, ".gif")
+system2("google-pprof", args=c("--gif", fgseaSoPath, profOut), 
+        stdout=profOutSvg)
+```
+
+Here the result:
+
+```{r echo = FALSE}
+knitr::include_graphics(profOutSvg)
+```
+

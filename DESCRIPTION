@@ -1,0 +1,14 @@
+Package: rgperftools
+Type: Package
+Title: Wrapper for gperftools
+Version: 0.1.0
+Author: Alexey Sergushichev
+Maintainer: Alexey Sergushichev <alsergbox@gmail.com>
+Description: This a simple package to expose gperftools ProfilerStart and ProfilerStop functions.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: Rcpp
+SystemRequirements: libgoogle-perftools
+LinkingTo: Rcpp
+
