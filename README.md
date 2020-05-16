@@ -63,6 +63,6 @@ system2("google-pprof", args=c("--gif", fgseaSoPath, profOut),
 
 Here the result:
 
-[[vignettes/images/prof.svg]]
+![](https://raw.githubusercontent.com/assaron/rgperftools/master/vignettes/images/prof.svg)
 
 
