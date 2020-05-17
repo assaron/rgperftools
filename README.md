@@ -4,7 +4,7 @@ The package requires `libgoogle-perftools-dev` and `google-perftools` packages t
 
 On Debian/Ubuntu run:
 ```bash
-sudo apt isntall google-perftools libgoogle-perftools-dev
+sudo apt install google-perftools libgoogle-perftools-dev
 ```
 
 Install the package:
@@ -61,7 +61,7 @@ system2("google-pprof", args=c("--gif", fgseaSoPath, profOut),
         stdout=profOutSvg)
 ```
 
-Here the result:
+Here is the result:
 
 ![](https://raw.githubusercontent.com/assaron/rgperftools/master/vignettes/images/prof.svg)
 
