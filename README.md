@@ -16,7 +16,7 @@ Loading package:
 
 
 ```r
-library(rgprofiler)
+library(rgperftools)
 ```
 
 We'll be profiling `fgsea`:
