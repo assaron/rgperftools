@@ -11,4 +11,4 @@ LazyData: true
 Imports: Rcpp
 SystemRequirements: libgoogle-perftools
 LinkingTo: Rcpp
-
+RoxygenNote: 7.1.0
