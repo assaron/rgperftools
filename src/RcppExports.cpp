@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // start_profiler
 void start_profiler(String str);
-RcppExport SEXP _rgprofiler_start_profiler(SEXP strSEXP) {
+RcppExport SEXP _rgperftools_start_profiler(SEXP strSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< String >::type str(strSEXP);
@@ -17,7 +17,7 @@ END_RCPP
 }
 // stop_profiler
 void stop_profiler();
-RcppExport SEXP _rgprofiler_stop_profiler() {
+RcppExport SEXP _rgperftools_stop_profiler() {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     stop_profiler();
@@ -26,12 +26,12 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_rgprofiler_start_profiler", (DL_FUNC) &_rgprofiler_start_profiler, 1},
-    {"_rgprofiler_stop_profiler", (DL_FUNC) &_rgprofiler_stop_profiler, 0},
+    {"_rgperftools_start_profiler", (DL_FUNC) &_rgperftools_start_profiler, 1},
+    {"_rgperftools_stop_profiler", (DL_FUNC) &_rgperftools_stop_profiler, 0},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_rgprofiler(DllInfo *dll) {
+RcppExport void R_init_rgperftools(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

@@ -2,10 +2,10 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 start_profiler <- function(str) {
-    invisible(.Call(`_rgprofiler_start_profiler`, str))
+    invisible(.Call(`_rgperftools_start_profiler`, str))
 }
 
 stop_profiler <- function() {
-    invisible(.Call(`_rgprofiler_stop_profiler`))
+    invisible(.Call(`_rgperftools_stop_profiler`))
 }
 

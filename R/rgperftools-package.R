@@ -1,0 +1,3 @@
+#' @useDynLib
+#' @import Rcpp
+NULL
